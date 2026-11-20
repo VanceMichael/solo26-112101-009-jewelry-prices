@@ -99,5 +99,64 @@
       ],
       "value": "Q-A"
     }
+  },
+  {
+    "path": "/counter/east/allocations",
+    "stage": "initial",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "path": [
+        "limit"
+      ],
+      "value": 2
+    }
+  },
+  {
+    "path": "/counter/east/allocations",
+    "stage": "initial",
+    "method": "POST",
+    "status": 409,
+    "expected": {
+      "path": [
+        "ledgerRevision"
+      ],
+      "value": 2
+    },
+    "body": {
+      "offerId": "Q-D",
+      "promotion": "PR-2",
+      "period": "E41-20261120",
+      "pieces": 1,
+      "ledgerRevision": 1
+    }
+  },
+  {
+    "path": "/counter/east/allocations",
+    "stage": "clarified",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "path": [
+        "items",
+        0,
+        "state"
+      ],
+      "value": "release-requested"
+    }
+  },
+  {
+    "path": "/counter/east/allocations",
+    "stage": "clarified",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "path": [
+        "items",
+        0,
+        "state"
+      ],
+      "value": "released"
+    }
   }
 ]

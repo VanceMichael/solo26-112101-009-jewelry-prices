@@ -11,3 +11,7 @@
 `data/sources.json` 保存原始报文及站点页面。连续响应由来源按同一进程内的观察次数提供。阶段从 `initial` 启动，本地演练人员可用 `POST /scenario/阶段名` 切换，未覆盖的路由延用初始响应。切换不清空来源的请求记录。重开服务会复位。
 
 执行 `npm test` 核对来源契约。依赖锁仅包含 Node.js 标准库运行所需的项目清单。容器方式可先执行 `docker build -t jewelry-prices-sources .`，再执行 `docker run --rm jewelry-prices-sources`。镜像准备完成后的验证不需要外网。
+
+## 柜台优惠额度
+
+`/counter/门店/allocations` 返回活动期件数上限与门店柜台实际占用回执。 `release-requested` 为申请释放，`released` 确认已回收，`redeemed` 表示已兑现并计入当期消耗。报价占用请求可提交到 `POST /counter/门店/allocations`，字段 `offerId`、`promotion`、`period`、`pieces` 和所观察的 `ledgerRevision`。柜台按自身修订判断占用，一家店的明细与另一家独立。窗口超时时可查询该门店实际登记的票号。

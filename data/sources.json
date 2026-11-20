@@ -99,6 +99,49 @@
           "batch": 1,
           "items": []
         }
+      },
+      "GET /counter/east/allocations": {
+        "data": {
+          "ledgerRevision": 1,
+          "period": "E41-20261120",
+          "promotion": "PR-2",
+          "limit": 2,
+          "items": [
+            {
+              "offerId": "Q-A",
+              "pieces": 1,
+              "state": "allocated"
+            }
+          ]
+        }
+      },
+      "GET /counter/west/allocations": {
+        "data": {
+          "ledgerRevision": 1,
+          "period": "W41-20261120",
+          "promotion": "PR-1",
+          "limit": 3,
+          "items": [
+            {
+              "offerId": "Q-B",
+              "pieces": 1,
+              "state": "allocated"
+            }
+          ]
+        }
+      },
+      "POST /counter/east/allocations": {
+        "status": 409,
+        "data": {
+          "reason": "占用修订已变化",
+          "ledgerRevision": 2
+        }
+      },
+      "POST /counter/west/allocations": {
+        "status": 202,
+        "data": {
+          "state": "received"
+        }
       }
     },
     "published": {
@@ -109,6 +152,26 @@
       "GET /shops/east/sale/terms": {
         "type": "text/html; charset=utf-8",
         "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>东店限制</h1><p data-batch=\"41\">PR-1 不含 K-12/n8</p><p>PR-2 限 K-12/n7</p></main></html>"
+      },
+      "GET /counter/east/allocations": {
+        "data": {
+          "ledgerRevision": 2,
+          "period": "E41-20261120",
+          "promotion": "PR-2",
+          "limit": 2,
+          "items": [
+            {
+              "offerId": "Q-A",
+              "pieces": 1,
+              "state": "allocated"
+            },
+            {
+              "offerId": "Q-C",
+              "pieces": 1,
+              "state": "allocated"
+            }
+          ]
+        }
       }
     },
     "clarified": {
@@ -145,6 +208,50 @@
             }
           ]
         }
+      },
+      "GET /counter/east/allocations": {
+        "sequence": [
+          {
+            "data": {
+              "ledgerRevision": 3,
+              "period": "E41-20261120",
+              "promotion": "PR-2",
+              "limit": 2,
+              "items": [
+                {
+                  "offerId": "Q-A",
+                  "pieces": 1,
+                  "state": "release-requested"
+                },
+                {
+                  "offerId": "Q-C",
+                  "pieces": 1,
+                  "state": "allocated"
+                }
+              ]
+            }
+          },
+          {
+            "data": {
+              "ledgerRevision": 4,
+              "period": "E41-20261120",
+              "promotion": "PR-2",
+              "limit": 2,
+              "items": [
+                {
+                  "offerId": "Q-A",
+                  "pieces": 1,
+                  "state": "released"
+                },
+                {
+                  "offerId": "Q-C",
+                  "pieces": 1,
+                  "state": "redeemed"
+                }
+              ]
+            }
+          }
+        ]
       }
     }
   }
