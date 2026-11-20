@@ -1,0 +1,103 @@
+[
+  {
+    "path": "/brands/yun/gold",
+    "stage": "initial",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "includes": "2026-11-20T15:30:00Z"
+    }
+  },
+  {
+    "path": "/shops",
+    "stage": "initial",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "path": [
+        1,
+        "timezone"
+      ],
+      "value": "Asia/Bangkok"
+    }
+  },
+  {
+    "path": "/shops/east/sale",
+    "stage": "initial",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "includes": "发布中"
+    }
+  },
+  {
+    "path": "/shops/east/sale/terms",
+    "stage": "initial",
+    "method": "GET",
+    "status": 425,
+    "expected": {
+      "path": [
+        "reason"
+      ],
+      "value": "一页尚在发出"
+    }
+  },
+  {
+    "path": "/designs",
+    "stage": "initial",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "path": [
+        1,
+        "generation"
+      ],
+      "value": "n8"
+    }
+  },
+  {
+    "path": "/labor",
+    "stage": "initial",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "path": [
+        1,
+        "type"
+      ],
+      "value": "per-item"
+    }
+  },
+  {
+    "path": "/shops/east/sale/terms",
+    "stage": "published",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "includes": "PR-1 不含 K-12/n8"
+    }
+  },
+  {
+    "path": "/shops/east/sale/terms",
+    "stage": "clarified",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "includes": "PR-2 编号明确撤下"
+    }
+  },
+  {
+    "path": "/shops/clarifications",
+    "stage": "clarified",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "path": [
+        "items",
+        2,
+        "offerId"
+      ],
+      "value": "Q-A"
+    }
+  }
+]

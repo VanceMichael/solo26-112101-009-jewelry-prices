@@ -1,0 +1,151 @@
+{
+  "stages": {
+    "initial": {
+      "GET /brands/yun/gold": {
+        "type": "text/html; charset=utf-8",
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>行云品牌基础牌价</h1><p>签发批次 1</p><table><tr><th>生效时刻</th><th>成色</th><th>单位</th><th>价格</th></tr><tr data-identity=\"B1\"><td>2026-11-20T10:00:00Z</td><td>足金</td><td>元/克</td><td>852.00</td></tr><tr data-identity=\"B2\"><td>2026-11-20T15:30:00Z</td><td>足金</td><td>元/克</td><td>826.50</td></tr></table></main></html>"
+      },
+      "GET /shops": {
+        "data": [
+          {
+            "shop": "east",
+            "timezone": "Asia/Shanghai",
+            "url": "/shops/east/sale",
+            "selected": [
+              "K-12",
+              "S-4"
+            ]
+          },
+          {
+            "shop": "west",
+            "timezone": "Asia/Bangkok",
+            "url": "/shops/west/sale",
+            "selected": [
+              "K-12"
+            ]
+          }
+        ]
+      },
+      "GET /shops/east/history/40": {
+        "type": "text/html; charset=utf-8",
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>东店 门店价目</h1><p data-batch=\"40\">覆盖已结束</p><table><tr><th>本地活动时间</th><th>减免</th><th>适用款</th><th>叠加范围</th></tr><tr data-id=\"PR-2\"><td>2026-11-20 21:00 至次日 02:00</td><td>工费减半</td><td>K-12 细链</td><td>与 PR-1 互斥</td></tr></table></main></html>"
+      },
+      "GET /shops/east/sale": {
+        "type": "text/html; charset=utf-8",
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>东店 门店价目</h1><p data-batch=\"41\">发布中</p><table><tr><th>本地活动时间</th><th>减免</th><th>适用款</th><th>叠加范围</th></tr><tr data-id=\"PR-1\"><td>2026-11-20 21:00 至次日 02:00</td><td>每克减 38 元</td><td>全部足金</td><td>可与工费券同用</td></tr><tr data-id=\"PR-2\"><td>2026-11-20 21:00 至次日 02:00</td><td>工费减半</td><td>K-12 细链</td><td>与 PR-1 互斥</td></tr></table><a href=\"/shops/east/sale/terms\">排除条款</a></main></html>"
+      },
+      "GET /shops/east/sale/terms": {
+        "status": 425,
+        "data": {
+          "reason": "一页尚在发出"
+        }
+      },
+      "GET /shops/west/sale": {
+        "type": "text/html; charset=utf-8",
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>西店 门店价目</h1><p data-batch=\"41\">覆盖已结束</p><table><tr><th>本地活动时间</th><th>减免</th><th>适用款</th><th>叠加范围</th></tr><tr data-id=\"PR-1\"><td>2026-11-20 20:00 至次日 01:00</td><td>每克减 15 元</td><td>K-12</td><td>工费照常</td></tr></table></main></html>"
+      },
+      "GET /designs": {
+        "data": [
+          {
+            "model": "K-12",
+            "generation": "n7",
+            "label": "细链",
+            "karat": "足金",
+            "weight": "5.83",
+            "validFrom": "2026-10-22T06:00:00Z",
+            "validUntil": "2026-11-20T15:00:00Z"
+          },
+          {
+            "model": "K-12",
+            "generation": "n8",
+            "label": "细链新版",
+            "karat": "足金",
+            "weight": "5.24",
+            "validFrom": "2026-11-20T15:00:00Z",
+            "validUntil": null
+          },
+          {
+            "model": "S-4",
+            "generation": "b1",
+            "label": "线条坠",
+            "karat": "足金",
+            "weight": "3.81",
+            "validFrom": "2026-11-01T00:00:00Z",
+            "validUntil": null
+          }
+        ]
+      },
+      "GET /labor": {
+        "data": [
+          {
+            "generation": "n7",
+            "value": "16.80",
+            "type": "per-gram"
+          },
+          {
+            "generation": "n8",
+            "value": "113.00",
+            "type": "per-item"
+          },
+          {
+            "generation": "b1",
+            "value": "19.00",
+            "type": "per-gram"
+          }
+        ]
+      },
+      "GET /shops/clarifications": {
+        "data": {
+          "batch": 1,
+          "items": []
+        }
+      }
+    },
+    "published": {
+      "GET /shops/east/sale": {
+        "type": "text/html; charset=utf-8",
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>东店 门店价目</h1><p data-batch=\"41\">覆盖已结束</p><table><tr><th>本地活动时间</th><th>减免</th><th>适用款</th><th>叠加范围</th></tr><tr data-id=\"PR-1\"><td>2026-11-20 21:00 至次日 02:00</td><td>每克减 38 元</td><td>全部足金</td><td>可与工费券同用</td></tr><tr data-id=\"PR-2\"><td>2026-11-20 21:00 至次日 02:00</td><td>工费减半</td><td>K-12 细链</td><td>与 PR-1 互斥</td></tr></table><a href=\"/shops/east/sale/terms\">排除条款</a></main></html>"
+      },
+      "GET /shops/east/sale/terms": {
+        "type": "text/html; charset=utf-8",
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>东店限制</h1><p data-batch=\"41\">PR-1 不含 K-12/n8</p><p>PR-2 限 K-12/n7</p></main></html>"
+      }
+    },
+    "clarified": {
+      "GET /shops/east/sale": {
+        "type": "text/html; charset=utf-8",
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>东店 门店价目</h1><p data-batch=\"42\">覆盖已结束</p><table><tr><th>本地活动时间</th><th>减免</th><th>适用款</th><th>叠加范围</th></tr><tr data-id=\"PR-1\"><td>2026-11-20 21:00 至次日 02:00</td><td>每克减 38 元</td><td>全部足金</td><td>可与工费券同用</td></tr><tr data-id=\"PR-2\"><td>2026-11-20 21:00 至次日 02:00</td><td>工费减半</td><td>K-12 细链</td><td>与 PR-1 互斥</td></tr></table><a href=\"/shops/east/sale/terms\">排除条款</a></main></html>"
+      },
+      "GET /shops/east/sale/terms": {
+        "type": "text/html; charset=utf-8",
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>东店限制</h1><p data-batch=\"42\">保留 PR-1 对 K-12/n8 的限制</p><p>PR-2 编号明确撤下</p></main></html>"
+      },
+      "GET /shops/clarifications": {
+        "data": {
+          "batch": 2,
+          "items": [
+            {
+              "source": "east",
+              "appliesTo": "PR-2",
+              "effectiveAt": "2026-11-20T15:15:00Z",
+              "action": "end"
+            },
+            {
+              "source": "west",
+              "appliesTo": "PR-1",
+              "effectiveAt": "2026-11-20T14:00:00Z",
+              "action": "extend",
+              "until": "2026-11-20T19:15:00Z"
+            },
+            {
+              "source": "east",
+              "offerId": "Q-A",
+              "action": "stop-honoring",
+              "at": "2026-11-20T16:10:00Z"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

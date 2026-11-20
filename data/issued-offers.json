@@ -1,0 +1,30 @@
+[
+  {
+    "offerId": "Q-A",
+    "shop": "east",
+    "model": "K-12",
+    "generation": "n7",
+    "issuedAt": "2026-11-20T14:41:00Z",
+    "validUntil": "2026-11-20T17:00:00Z",
+    "amountFen": 501613,
+    "basis": [
+      "B1",
+      "PR-2",
+      "东店旧刊 40"
+    ]
+  },
+  {
+    "offerId": "Q-B",
+    "shop": "west",
+    "model": "K-12",
+    "generation": "n8",
+    "issuedAt": "2026-11-20T15:12:00Z",
+    "validUntil": "2026-11-20T18:00:00Z",
+    "amountFen": 451588,
+    "basis": [
+      "B1",
+      "PR-1",
+      "西店刊 41"
+    ]
+  }
+]
